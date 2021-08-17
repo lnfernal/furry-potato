@@ -1,5 +1,6 @@
 const config = require("./config.js");
 const net = require("net");
+const { decodePacket } = require("./packet-parser.js");
 
 const server = net.createServer((c) => {
     console.log("Client Connected.");
@@ -16,6 +17,7 @@ const server = net.createServer((c) => {
     });
     c.on("data", (data) => {
         pc.write(data);
+        decodePacket(data);
         process.stdout.write("\u001b[32;1m");
         console.log(data);
     });

@@ -140,4 +140,6 @@ PacketTypes[PacketTypes["RequestNPCBuffRemoval"] = 137] = "RequestNPCBuffRemoval
 PacketTypes[PacketTypes["ClientSyncedInventory"] = 138] = "ClientSyncedInventory";
 PacketTypes[PacketTypes["SetCountsAsHostForGameplay"] = 139] = "SetCountsAsHostForGameplay";
 
-module.exports = PacketTypes;
+const NetModules = ["Liquid", "Text", "Ping", "Ambience", "Bestiary", "CreativeUnlocks", "CreativePowers", "CreativeUnlocksPlayerReport", "TeleportPylon", "Particles", "CreativePowerPermissions"]
+
+module.exports = { PacketTypes, NetModules };
